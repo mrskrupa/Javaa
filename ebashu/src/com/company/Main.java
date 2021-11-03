@@ -36,5 +36,6 @@ public class Main {
             prev = c;
         }
         System.out.println("Ваше число "+res+" равно "+number);
+
     }
 }
