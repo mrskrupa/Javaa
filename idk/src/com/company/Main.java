@@ -1,17 +1,16 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
         Random random = new Random();
-        int l1 []= new int[10];
+        int [] l1 = new int[10];
         for (int i=0; i< l1.length; i++){
             l1[i]= random.nextInt(1000);
         }
-        int l2 []= new int[5];
+        int [] l2 = new int[5];
         for (int i=0; i< l2.length; i++){
             l2[i]= random.nextInt(1000);
         }
@@ -21,8 +20,8 @@ public class Main {
             res[i]=l1[i];
             counter++;
         }
-        for (int i=0; i< l2.length; i++) {
-            res[counter++] = l2[i];
+        for (int j=0; j< l2.length; j++){
+            res[counter++]= l2[j];
         }
         System.out.println("Before: ");
         for (int i=0; i< res.length; i++) {
@@ -33,23 +32,25 @@ public class Main {
         printArray(res);
     }
     private static void sortMerge(int [] input){
-        if(input.length<2){
+        int current = input.length;
+        if(current<2){
             return;
         }
-        int middle = input.length/2;
+        int middle=current/2;
         int [] left = new int[middle];
-        int [] right = new int[input.length-middle];
+        int [] right = new int[current-middle];
 
-        for(int i=0; i<middle; i++){
+        for (int i=0; i<middle; i++){
             left[i]=input[i];
         }
-        for(int i=middle; i<input.length; i++){
+        for (int i =middle; i<current; i++){
             right[i-middle]=input[i];
         }
+
         sortMerge(left);
         sortMerge(right);
 
-        Merge(input, left,right);
+        Merge(input, left ,right);
     }
     private static void Merge(int[]input, int[]left, int[]right ){
         int leftSize = left.length;
@@ -57,7 +58,7 @@ public class Main {
         int i=0, j=0, k=0;
 
         while (i<leftSize && j<rightSize){
-            if(left[i]<=right[j]){
+            if (left[i]<=right[j]){
                 input[k]=left[i];
                 i++;
             }
