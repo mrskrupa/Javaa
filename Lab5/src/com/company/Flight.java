@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Flight {
     private String City; // Місто прибуття
     private int Number; //Номер рейсу
@@ -106,5 +108,30 @@ public class Flight {
             System.out.println(Data + " Така дата відсутня");
         }
         this.Data = Data;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Flight flight = (Flight) o;
+        return Number == flight.Number && Double.compare(flight.Time, Time) == 0 && flag == flight.flag && City.equals(flight.City) && TypOfAirplane.equals(flight.TypOfAirplane) && Data.equals(flight.Data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(City, Number, TypOfAirplane, Time, Data, flag);
+    }
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "City='" + City + '\'' +
+                ", Number=" + Number +
+                ", TypOfAirplane='" + TypOfAirplane + '\'' +
+                ", Time=" + Time +
+                ", Data='" + Data + '\'' +
+                ", flag=" + flag +
+                '}';
     }
 }
