@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Directories</title>
+</head>
+<body>
+<div th:switch="${directories}">
+    <h2 th:case="null">No coaches found!</h2>
+    <div th:case="*">
+        <h2>Directories</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Town</th>
+                <th>Area</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="directory : ${directories}">
+                <td th:text="${directory.id}"></td>
+                <td th:text="${directory.town}"></td>
+                <td th:text="${directory.area}"></td>
+                <td><a th:href="@{directory-update/{id}(id=${directory.id})}">Update</a></td>
+                <td><a th:href="@{directory-delete/{id}(id=${directory.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/directory-create">Create</a></p>
+</div>
+</body>
+</html>

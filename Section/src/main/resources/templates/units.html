@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit</title>
+</head>
+<body>
+<div th:switch="${units}">
+    <h2 th:case="null">No coaches found!</h2>
+    <div th:case="*">
+        <h2>Units</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Unit name</th>
+                <th>Directory Id</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="unit : ${units}">
+                <td th:text="${unit.id}"></td>
+                <td th:text="${unit.sectionName}"></td>
+                <td th:text="${unit.directoryId}"></td>
+                <td><a th:href="@{unit-update/{id}(id=${unit.id})}">Update</a></td>
+                <td><a th:href="@{unit-delete/{id}(id=${unit.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/unit-create">Create</a></p>
+</div>
+</body>
+</html>

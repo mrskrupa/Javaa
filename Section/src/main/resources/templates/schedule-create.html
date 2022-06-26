@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create schedule</title>
+</head>
+<body>
+<form action="#" th:action="@{/schedule-create}" th:object="${scheduleRequestDto}" method="post">
+    <p>Begin: <input type="text" th:field="*{begin}" /></p>
+    <p>End: <input type="text" th:field="*{end}" /></p>
+    <p>Directory Id: <input type="number" th:field="*{directoryId}" /></p>
+    <input type="submit" value="Create schedule">
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranks</title>
+</head>
+<body>
+<div th:switch="${ranks}">
+    <h2 th:case="null">No coaches found!</h2>
+    <div th:case="*">
+        <h2>Ranks</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Rank type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="rank : ${ranks}">
+                <td th:text="${rank.id}"></td>
+                <td th:text="${rank.rankType}"></td>
+                <td><a th:href="@{rank-update/{id}(id=${rank.id})}">Update</a></td>
+                <td><a th:href="@{rank-delete/{id}(id=${rank.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/rank-create">Create</a></p>
+</div>
+</body>
+</html>

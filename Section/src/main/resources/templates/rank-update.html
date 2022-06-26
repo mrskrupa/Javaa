@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update rank</title>
+</head>
+<body>
+<form action="#" th:action="@{/rank-update}" th:object="${rank}" method="post">
+    <p>Id: <input readonly type="number" th:field="*{id}" /></p>
+    <p>Rank type: <input type="text" th:field="*{rankType}" /></p>
+    <input type="submit" value="Update rank">
+</form>
+</body>
+</html>
