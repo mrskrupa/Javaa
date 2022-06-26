@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update student</title>
+</head>
+<body>
+<form action="#" th:action="@{/student-update}" th:object="${student}" method="post">
+    <p>Id: <input readonly type="number" th:field="*{id}" /></p>
+    <p>First Name: <input type="text" th:field="*{firstName}" /></p>
+    <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
+    <p>Patronymic: <input type="text" th:field="*{patronymic}" /></p>
+    <p>Phone number: <input type="text" th:field="*{phoneNumber}" /></p>
+    <p>Address: <input type="text" th:field="*{address}" /></p>
+    <p>School Id: <input type="text" th:field="*{schoolId}" /></p>
+    <p>Directory Id: <input type="number" th:field="*{directoryId}" /></p>
+    <input type="submit" value="Update student">
+</form>
+</body>
+</html>

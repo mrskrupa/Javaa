@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Coaches</title>
+</head>
+<body>
+<div th:switch="${coaches}">
+    <h2 th:case="null">No coaches found!</h2>
+    <div th:case="*">
+        <h2>Coaches</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id&nbsp</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Patronymic</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="coach : ${coaches}">
+                <td th:text="${coach.id}"></td>
+                <td th:text="${coach.firstName}"></td>
+                <td th:text="${coach.lastName}"></td>
+                <td th:text="${coach.patronymic}"></td>
+                <td><a th:href="@{coach-update/{id}(id=${coach.id})}">Update</a></td>
+                <td><a th:href="@{coach-delete/{id}(id=${coach.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/coach-create">Create</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update directory</title>
+</head>
+<body>
+<form action="#" th:action="@{/directory-update}" th:object="${directory}" method="post">
+    <p>Id: <input readonly type="number" th:field="*{id}" /></p>
+    <p>Town: <input type="text" th:field="*{town}" /></p>
+    <p>Area: <input type="text" th:field="*{area}" /></p>
+    <input type="submit" value="Update directory">
+</form>
+</body>
+</html>

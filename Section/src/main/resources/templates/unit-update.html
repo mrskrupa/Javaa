@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Unit</title>
+</head>
+<body>
+<form action="#" th:action="@{/unit-update}" th:object="${unit}" method="post">
+    <p>Id: <input readonly type="number" th:field="*{id}" /></p>
+    <p>Section Name: <input type="text" th:field="*{sectionName}" /></p>
+    <p>Directory Id: <input type="number" th:field="*{directoryId}" /></p>
+    <input type="submit" value="Update unit">
+</form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create directory</title>
+</head>
+<body>
+<form action="#" th:action="@{/directory-create}" th:object="${directoryRequestDto}" method="post">
+    <p>Town: <input type="text" th:field="*{town}" /></p>
+    <p>Area: <input type="text" th:field="*{area}" /></p>
+    <input type="submit" value="Create directory">
+</form>
+</body>
+</html>

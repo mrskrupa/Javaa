@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update schedule</title>
+</head>
+<body>
+<form action="#" th:action="@{/schedule-update}" th:object="${schedule}" method="post">
+    <p>Id: <input readonly type="number" th:field="*{id}" /></p>
+    <p>Begin: <input type="text" th:field="*{begin}" /></p>
+    <p>End: <input type="text" th:field="*{end}" /></p>
+    <p>Directory Id: <input type="number" th:field="*{directoryId}" /></p>
+    <input type="submit" value="Update schedule">
+</form>
+</body>
+</html>
