@@ -8,6 +8,12 @@
 <div th:switch="${ranks}">
     <h2 th:case="null">No coaches found!</h2>
     <div th:case="*">
+        <td><a href="/directories">Directories</a></td>
+        <td><a href="/coaches">Coaches</a></td>
+        <td><a href="/schedules">Schedules</a></td>
+        <td><a href="/students">Students</a></td>
+        <td><a href="/schools">Schools</a></td>
+        <td><a href="/units">Units</a></td>
         <h2>Ranks</h2>
         <table>
             <thead>
