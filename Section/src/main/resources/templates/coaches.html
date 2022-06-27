@@ -8,11 +8,17 @@
 <div th:switch="${coaches}">
     <h2 th:case="null">No coaches found!</h2>
     <div th:case="*">
+        <td><a href="/directories">Directories</a></td>
+        <td><a href="/ranks">Ranks</a></td>
+        <td><a href="/schedules">Schedules</a></td>
+        <td><a href="/students">Students</a></td>
+        <td><a href="/schools">Schools</a></td>
+        <td><a href="/units">Units</a></td>
         <h2>Coaches</h2>
         <table>
             <thead>
             <tr>
-                <th>Id&nbsp</th>
+                <th>Id</th>
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Patronymic</th>
